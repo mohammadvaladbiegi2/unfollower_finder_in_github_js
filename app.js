@@ -23,9 +23,7 @@ function createArrayusers(names) {
 }
 // Array of following  users
 let Arrayusersfollowing = createArrayusers(usersNamefollowing);
-console.log("====================================");
-console.log(Arrayusersfollowing);
-console.log("====================================");
+
 ///////////////////
 //////////////////
 /////////////////
