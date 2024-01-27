@@ -4,25 +4,36 @@
 let userLinksfollowing = document.querySelectorAll(
   'a[data-hovercard-type="user"]'
 );
-// find user Namesfollowing
+// find user Names
 let hrefValuesUsersfollowing = Array.from(userLinksfollowing).map((link) =>
   link.href.slice(19)
 );
+let hreflinkUsersfollowing = Array.from(userLinksfollowing).map(
+  (link) => link.href
+);
+
 // Remove additional namesfollowing
 let usersNamefollowing = [...new Set(hrefValuesUsersfollowing)];
+let userslinkfollowing = [...new Set(hreflinkUsersfollowing)];
 
 // create Array of name with acquired namesfollowing ☝☝
-function createArrayusers(names) {
+function createArrayusers(names, link) {
   let Arrayusers = [];
 
   for (let i = 0; i < names.length; i++) {
-    let nameObj = { name: names[i] };
+    let nameObj = { name: names[i], link: link[i] };
     Arrayusers.push(nameObj);
   }
   return Arrayusers;
 }
-// Array of following  users
-let Arrayusersfollowing = createArrayusers(usersNamefollowing);
+// Array of following or following usersfollowing
+let Arrayusersfollowing = createArrayusers(
+  usersNamefollowing,
+  userslinkfollowing
+);
+console.log("====================================");
+console.log(Arrayusersfollowing);
+console.log("====================================");
 
 ///////////////////
 //////////////////
@@ -34,24 +45,39 @@ let Arrayusersfollowing = createArrayusers(usersNamefollowing);
 // second code
 
 // select All  usersfollowers
-let userLinks = document.querySelectorAll('a[data-hovercard-type="user"]');
+let userLinksfollowers = document.querySelectorAll(
+  'a[data-hovercard-type="user"]'
+);
 // find user Names
-let hrefValuesUsers = Array.from(userLinks).map((link) => link.href.slice(19));
+let hrefValuesUsersfollowers = Array.from(userLinksfollowers).map((link) =>
+  link.href.slice(19)
+);
+let hreflinkUsersfollowers = Array.from(userLinksfollowers).map(
+  (link) => link.href
+);
+
 // Remove additional namesfollowers
-let usersName = [...new Set(hrefValuesUsers)];
+let usersNamefollowers = [...new Set(hrefValuesUsersfollowers)];
+let userslinkfollowers = [...new Set(hreflinkUsersfollowers)];
 
 // create Array of name with acquired namesfollowers ☝☝
-function createArrayusers(names) {
+function createArrayusers(names, link) {
   let Arrayusers = [];
 
   for (let i = 0; i < names.length; i++) {
-    let nameObj = { name: names[i] };
+    let nameObj = { name: names[i], link: link[i] };
     Arrayusers.push(nameObj);
   }
   return Arrayusers;
 }
 // Array of following or followers usersfollowers
-let Arrayusers = createArrayusers(usersName);
+let Arrayusersfollowers = createArrayusers(
+  usersNamefollowers,
+  userslinkfollowers
+);
+console.log("====================================");
+console.log(Arrayusersfollowers);
+console.log("====================================");
 
 // find Those you follow but they don't follow you back
 function compareArrays(followers, following) {
@@ -76,5 +102,5 @@ function compareArrays(followers, following) {
 }
 
 // Array of unfollower👍👌
-let unfollower = compareArrays(Arrayusers, Arrayusersfollowing);
+let unfollower = compareArrays(Arrayusersfollowers, Arrayusersfollowing);
 console.log(unfollower);
