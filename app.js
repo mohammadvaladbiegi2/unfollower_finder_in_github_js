@@ -1,85 +1,112 @@
-//  first code
+// All following
+let allUsersArrayfollowing = [];
 
-// select All  usersfollowing
-let userLinksfollowing = document.querySelectorAll(
-  'a[data-hovercard-type="user"]'
-);
-// find user Names
-let hrefValuesUsersfollowing = Array.from(userLinksfollowing).map((link) =>
-  link.href.slice(19)
-);
-let hreflinkUsersfollowing = Array.from(userLinksfollowing).map(
-  (link) => link.href
-);
+// function for select All  usersfollowing
 
-// Remove additional namesfollowing
-let usersNamefollowing = [...new Set(hrefValuesUsersfollowing)];
-let userslinkfollowing = [...new Set(hreflinkUsersfollowing)];
+function updateUsersFollowingArray() {
+  // get folowwing Element
 
-// create Array of name with acquired namesfollowing ☝☝
-function createArrayusers(names, link) {
-  let Arrayusers = [];
+  let userLinksfollowing = document.querySelectorAll(
+    'a[data-hovercard-type="user"]'
+  );
 
-  for (let i = 0; i < names.length; i++) {
-    let nameObj = { name: names[i], link: link[i] };
-    Arrayusers.push(nameObj);
+  // create Array of name following
+
+  let hrefValuesUsersfollowing = Array.from(userLinksfollowing).map((link) =>
+    link.href.slice(19)
+  );
+
+  // create Array of link page following
+
+  let hreflinkUsersfollowing = Array.from(userLinksfollowing).map(
+    (link) => link.href
+  );
+
+  // remove Extra values ​​in the array
+  let usersNamefollowing = [...new Set(hrefValuesUsersfollowing)];
+  let userslinkfollowing = [...new Set(hreflinkUsersfollowing)];
+
+  // create Array of Composition userName and link page following
+
+  function createArrayusers(names, link) {
+    let Arrayusers = [];
+
+    for (let i = 0; i < names.length; i++) {
+      let nameObj = { name: names[i], link: link[i] };
+      Arrayusers.push(nameObj);
+    }
+    return Arrayusers;
   }
-  return Arrayusers;
+
+  // calling function ☝☝ and save it in New Array
+
+  let newArrayusersfollowing = createArrayusers(
+    usersNamefollowing,
+    userslinkfollowing
+  );
+
+  // Adding previous and new information inside the Array allUsersArrayfollowing
+
+  allUsersArrayfollowing = allUsersArrayfollowing.concat(
+    newArrayusersfollowing
+  );
+
+  // return Array of following
+
+  return allUsersArrayfollowing;
 }
-// Array of following or following usersfollowing
-let Arrayusersfollowing = createArrayusers(
-  usersNamefollowing,
-  userslinkfollowing
-);
-console.log("====================================");
-console.log(Arrayusersfollowing);
-console.log("====================================");
 
-///////////////////
-//////////////////
-/////////////////
-////////////////
-///////////////
-/////////////
+///////////////////////////////////////////////////followers//////////////////////////////////////
+// All followers
+let allUsersArrayfollowers = [];
+// function for select All  usersfollowers
+function updateUsersFollowersArray() {
+  // get followers Element
+  let userLinksfollowers = document.querySelectorAll(
+    'a[data-hovercard-type="user"]'
+  );
 
-// second code
+  // create Array of name followers
+  let hrefValuesUsersfollowers = Array.from(userLinksfollowers).map((link) =>
+    link.href.slice(19)
+  );
+  // create Array of link page followers
 
-// select All  usersfollowers
-let userLinksfollowers = document.querySelectorAll(
-  'a[data-hovercard-type="user"]'
-);
-// find user Names
-let hrefValuesUsersfollowers = Array.from(userLinksfollowers).map((link) =>
-  link.href.slice(19)
-);
-let hreflinkUsersfollowers = Array.from(userLinksfollowers).map(
-  (link) => link.href
-);
+  let hreflinkUsersfollowers = Array.from(userLinksfollowers).map(
+    (link) => link.href
+  );
 
-// Remove additional namesfollowers
-let usersNamefollowers = [...new Set(hrefValuesUsersfollowers)];
-let userslinkfollowers = [...new Set(hreflinkUsersfollowers)];
+  // remove Extra values ​​in the array
+  let usersNamefollowers = [...new Set(hrefValuesUsersfollowers)];
+  let userslinkfollowers = [...new Set(hreflinkUsersfollowers)];
 
-// create Array of name with acquired namesfollowers ☝☝
-function createArrayusers(names, link) {
-  let Arrayusers = [];
+  // create Array of Composition userName and link page of followers
+  function createArrayusers(names, link) {
+    let Arrayusers = [];
 
-  for (let i = 0; i < names.length; i++) {
-    let nameObj = { name: names[i], link: link[i] };
-    Arrayusers.push(nameObj);
+    for (let i = 0; i < names.length; i++) {
+      let nameObj = { name: names[i], link: link[i] };
+      Arrayusers.push(nameObj);
+    }
+    return Arrayusers;
   }
-  return Arrayusers;
-}
-// Array of following or followers usersfollowers
-let Arrayusersfollowers = createArrayusers(
-  usersNamefollowers,
-  userslinkfollowers
-);
-console.log("====================================");
-console.log(Arrayusersfollowers);
-console.log("====================================");
 
-// find Those you follow but they don't follow you back
+  // calling function ☝☝ and save it in New Array
+  let Arrayusersfollowers = createArrayusers(
+    usersNamefollowers,
+    userslinkfollowers
+  );
+
+  // Adding previous and new information inside the Array allUsersArrayfollowers
+
+  allUsersArrayfollowers = allUsersArrayfollowers.concat(Arrayusersfollowers);
+
+  // return Array of followers
+  return allUsersArrayfollowers;
+}
+
+// function Compare and find those who follow you but they don't follow you back
+
 function compareArrays(followers, following) {
   let notFoundArray = [];
 
@@ -101,6 +128,6 @@ function compareArrays(followers, following) {
   return notFoundArray;
 }
 
-// Array of unfollower👍👌
-let unfollower = compareArrays(Arrayusersfollowers, Arrayusersfollowing);
+//call and  Array of unfollower👍👌
+let unfollower = compareArrays(allUsersArrayfollowers, allUsersArrayfollowing);
 console.log(unfollower);
