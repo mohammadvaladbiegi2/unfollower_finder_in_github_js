@@ -1,9 +1,9 @@
 // All following
-let allUsersArrayfollowing = [];
+let allfollowing = [];
 
 // function for select All  usersfollowing
 
-function updateUsersFollowingArray() {
+function following() {
   // get folowwing Element
 
   let userLinksfollowing = document.querySelectorAll(
@@ -45,22 +45,20 @@ function updateUsersFollowingArray() {
     userslinkfollowing
   );
 
-  // Adding previous and new information inside the Array allUsersArrayfollowing
+  // Adding previous and new information inside the Array allfollowing
 
-  allUsersArrayfollowing = allUsersArrayfollowing.concat(
-    newArrayusersfollowing
-  );
+  allfollowing = allfollowing.concat(newArrayusersfollowing);
 
   // return Array of following
 
-  return allUsersArrayfollowing;
+  return allfollowing;
 }
 
 ///////////////////////////////////////////////////followers//////////////////////////////////////
 // All followers
-let allUsersArrayfollowers = [];
+let allfollowers = [];
 // function for select All  usersfollowers
-function updateUsersFollowersArray() {
+function followers() {
   // get followers Element
   let userLinksfollowers = document.querySelectorAll(
     'a[data-hovercard-type="user"]'
@@ -97,17 +95,17 @@ function updateUsersFollowersArray() {
     userslinkfollowers
   );
 
-  // Adding previous and new information inside the Array allUsersArrayfollowers
+  // Adding previous and new information inside the Array allfollowers
 
-  allUsersArrayfollowers = allUsersArrayfollowers.concat(Arrayusersfollowers);
+  allfollowers = allfollowers.concat(Arrayusersfollowers);
 
   // return Array of followers
-  return allUsersArrayfollowers;
+  return allfollowers;
 }
 
 // function Compare and find those who follow you but they don't follow you back
 
-function compareArrays(followers, following) {
+function find(followers, following) {
   let notFoundArray = [];
 
   for (let i = 0; i < following.length; i++) {
@@ -129,5 +127,4 @@ function compareArrays(followers, following) {
 }
 
 //call and  Array of unfollower👍👌
-let unfollower = compareArrays(allUsersArrayfollowers, allUsersArrayfollowing);
-console.log(unfollower);
+find(allfollowers, allfollowing);
