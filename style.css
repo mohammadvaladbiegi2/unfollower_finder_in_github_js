@@ -1,0 +1,89 @@
+body {
+  direction: ltr;
+  background-image: linear-gradient(
+    130deg,
+    rgba(7, 7, 7, 0.75) 0%,
+    rgba(255, 195, 0, 1) 87%
+  );
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: auto;
+
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.title {
+  color: white;
+}
+
+.Unfollow_list {
+  height: 150px;
+  overflow-y: scroll;
+}
+
+.Unfollow_list > li {
+  padding-right: 50px;
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.name_user {
+  font-weight: 500;
+  font-size: 20px;
+}
+.name_link {
+  font-weight: 500;
+  font-size: 18px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.name_link:hover {
+  color: blue;
+  cursor: pointer;
+}
+.line {
+  margin-top: 5px;
+  width: 100px;
+  height: 5px;
+  background-color: black;
+}
+
+.following_btn {
+  background-color: black;
+  padding: 10px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 10px 20px;
+  font-weight: 500;
+}
+.followers_btn {
+  background-color: rgb(195, 195, 195);
+  padding: 10px;
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 10px 20px;
+  font-weight: 500;
+}
+
+.find_btn {
+  background-color: rgb(141, 21, 0);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-top: 10px;
+}

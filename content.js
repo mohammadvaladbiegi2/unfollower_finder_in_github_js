@@ -48,7 +48,8 @@ function following() {
   // Adding previous and new information inside the Array allfollowing
 
   allfollowing = allfollowing.concat(newArrayusersfollowing);
-
+  console.log(allfollowing);
+  // cont_following.innerHTML = allfollowing.length;
   // return Array of following
 
   return allfollowing;
@@ -98,6 +99,7 @@ function followers() {
   // Adding previous and new information inside the Array allfollowers
 
   allfollowers = allfollowers.concat(Arrayusersfollowers);
+  console.log(allfollowers);
 
   // return Array of followers
   return allfollowers;
@@ -126,5 +128,13 @@ function find(followers, following) {
   return notFoundArray;
 }
 
-//call and  Array of unfollower👍👌
-find(allfollowers, allfollowing);
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  if (request.action === "getFollowing") {
+    following();
+  } else if (request.action === "getFollowers") {
+    followers();
+  } else if (request.action === "findUnfollowers") {
+    let unfollowers = find(allfollowers, allfollowing);
+    console.log(unfollowers);
+  }
+});
