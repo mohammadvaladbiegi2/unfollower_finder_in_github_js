@@ -5,8 +5,10 @@
    "description": "Find users who follow you but you don't follow back on GitHub",
  
    "action": {
-     "default_popup": "popup.html"
-  
+     "default_popup": "popup.html",
+     "default_icon": {
+      "48": "unfollow.png"
+    }
    },
    "permissions": ["activeTab"],
    "background": {
