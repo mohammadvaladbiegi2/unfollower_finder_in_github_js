@@ -1,13 +1,13 @@
 {
    "manifest_version": 3,
-   "name": "GitHub Enfollow Finder",
+   "name": "GitHub Unfollow Finder",
    "version": "1.0",
    "description": "Find users who follow you but you don't follow back on GitHub",
  
    "action": {
      "default_popup": "popup.html",
      "default_icon": {
-      "48": "unfollow.png"
+      "48": "unnamed.png"
     }
    },
    "permissions": ["activeTab"],

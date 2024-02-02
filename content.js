@@ -131,10 +131,18 @@ function find(followers, following) {
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.action === "getFollowing") {
     following();
+    alert(
+      "اگر فالووینگ بیشتر از 50 نفر داری \n برو صحفه بعد دوباره دکمه  following بزن \n اگر نه برو صحفه followers \n اگر همه کارها رو انجام دادی دکمه find بزن برای دیدن نتیجه"
+    );
   } else if (request.action === "getFollowers") {
     followers();
+    alert(
+      "اگر فالوور بیشتر از 50 نفر داری \n برو صحفه بعد دوباره دکمه  following بزن \n اگر نه برو صحفه following \n اگر همه کارهارو انجام دادی دکمه find برای دیدن نتایج بزن"
+    );
   } else if (request.action === "findUnfollowers") {
     let unfollowers = find(allfollowers, allfollowing);
+    alert(unfollowers.map((user) => `\n name: ${user.name} \n`));
+    alert("جزییات در لاگ صحفه 👇👇");
     console.log(unfollowers);
   }
 });
