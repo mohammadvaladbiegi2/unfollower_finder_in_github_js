@@ -67,6 +67,11 @@ body {
   margin: 10px 20px;
   font-weight: 500;
   text-transform: capitalize;
+  transition: all 0.2s ease;
+}
+
+.following_btn:hover {
+  transform: translateY(-5px);
 }
 .followers_btn {
   background-color: rgb(195, 195, 195);
@@ -78,6 +83,11 @@ body {
   margin: 10px 20px;
   font-weight: 500;
   text-transform: capitalize;
+  transition: all 0.2s ease;
+}
+
+.followers_btn:hover {
+  transform: translateY(-5px);
 }
 
 .find_btn {
@@ -89,4 +99,7 @@ body {
   border-radius: 6px;
   margin-top: 10px;
   text-transform: capitalize;
+}
+.find_btn:hover {
+  background-color: rgb(172, 69, 69);
 }
