@@ -35,6 +35,7 @@ function following() {
       let nameObj = { name: names[i], link: link[i] };
       Arrayusers.push(nameObj);
     }
+
     return Arrayusers;
   }
 
@@ -48,6 +49,12 @@ function following() {
   // Adding previous and new information inside the Array allfollowing
 
   allfollowing = allfollowing.concat(newArrayusersfollowing);
+  allfollowing = allfollowing.filter((value, index, self) => {
+    return (
+      self.findIndex((v) => v.name === value.name && v.link === value.link) ===
+      index
+    );
+  });
   console.log(allfollowing);
   // cont_following.innerHTML = allfollowing.length;
   // return Array of following
@@ -87,6 +94,7 @@ function followers() {
       let nameObj = { name: names[i], link: link[i] };
       Arrayusers.push(nameObj);
     }
+
     return Arrayusers;
   }
 
@@ -99,6 +107,14 @@ function followers() {
   // Adding previous and new information inside the Array allfollowers
 
   allfollowers = allfollowers.concat(Arrayusersfollowers);
+
+  allfollowers = allfollowers.filter((value, index, self) => {
+    return (
+      self.findIndex((v) => v.name === value.name && v.link === value.link) ===
+      index
+    );
+  });
+
   console.log(allfollowers);
 
   // return Array of followers
@@ -124,6 +140,13 @@ function find(followers, following) {
       notFoundArray.push(following[i]);
     }
   }
+
+  notFoundArray = notFoundArray.filter((value, index, self) => {
+    return (
+      self.findIndex((v) => v.name === value.name && v.link === value.link) ===
+      index
+    );
+  });
 
   return notFoundArray;
 }
