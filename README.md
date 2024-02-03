@@ -1,8 +1,7 @@
 Example
 
 
-https://github.com/mohammadvaladbiegi2/unfollower_finder_in_github_js/assets/126916758/39218541-d687-42b4-b068-914cc7343e5b
-
+https://github.com/mohammadvaladbiegi2/unfollower_finder_in_github_js/assets/126916758/df02ce2c-5534-44b2-a2e7-612481096cf7
 
 
 
