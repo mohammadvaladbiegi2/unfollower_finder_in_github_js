@@ -22,6 +22,12 @@ HOW TO USE
 
 7_ After finding all the people, press the find button and see the result in the console
 
+How install and use it 
+
+
+https://github.com/mohammadvaladbiegi2/unfollower_finder_in_github_js/assets/126916758/a2646c9e-bb0e-4c88-9cf2-fa080da4f34e
+
+
 
 HOW Project work🤔🤔🤔
 
