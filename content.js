@@ -56,7 +56,7 @@ function following() {
     );
   });
   console.log(allfollowing);
-  // cont_following.innerHTML = allfollowing.length;
+
   // return Array of following
 
   return allfollowing;
